@@ -9,18 +9,6 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
     private Node<T> tail;
     private int size;
 
-    private static final class Node<E> {
-        private E item;
-        private Node<E> prev;
-        private Node<E> next;
-
-        private Node(Node<E> prev, E item, Node<E> next) {
-            this.prev = prev;
-            this.item = item;
-            this.next = next;
-        }
-    }
-
     @Override
     public void add(T value) {
         linkLast(value);
@@ -182,5 +170,17 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
 
     private String getOutOfBoundsMessage(int index) {
         return "Index: " + index + ", Size: " + size;
+    }
+
+    private static final class Node<E> {
+        private E item;
+        private Node<E> prev;
+        private Node<E> next;
+
+        private Node(Node<E> prev, E item, Node<E> next) {
+            this.prev = prev;
+            this.item = item;
+            this.next = next;
+        }
     }
 }
